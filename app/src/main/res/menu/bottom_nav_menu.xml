@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_machinery"
+        android:icon="@drawable/ic_tractor"
+        android:title="@string/title_machinery" />
+
+    <item
+        android:id="@+id/navigation_trees"
+        android:icon="@drawable/ic_tree"
+        android:title="@string/title_trees" />
+
+</menu>
