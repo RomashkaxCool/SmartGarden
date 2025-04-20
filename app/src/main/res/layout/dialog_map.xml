@@ -5,11 +5,22 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/garden_map_title"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="16dp"/>
+
     <ImageView
         android:id="@+id/imageViewMap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        android:contentDescription="Мапа саду" />
+        android:contentDescription="@string/garden_map_title"
+        android:minWidth="300dp"
+        android:minHeight="300dp"/>
 </LinearLayout>

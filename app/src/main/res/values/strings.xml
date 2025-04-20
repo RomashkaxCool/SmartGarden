@@ -1,8 +1,18 @@
 <resources>
     <string name="app_name">Smart Garden</string>
-    <string name="reporting_button_desc">Відкрити звітність</string>
-    <string name="map_button_desc">Показати мапу саду</string>
+
     <string name="title_home">Головна</string>
     <string name="title_machinery">Техніка</string>
     <string name="title_trees">Дерева</string>
+
+    <string name="reporting_button_desc">Відкрити звітність</string>
+    <string name="map_button_desc">Показати мапу саду</string>
+
+    <string name="greeting_text">Вітаю, Роман!</string>
+    <string name="home_fragment_label">(Головний екран)</string>
+    <string name="machinery_fragment_label">Екран Техніки</string>
+    <string name="trees_fragment_label">Екран Дерев</string>
+    <string name="reporting_fragment_label">Екран Звітності</string>
+    <string name="garden_map_title">Мапа саду</string>
+
 </resources>

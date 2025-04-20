@@ -1,32 +1,31 @@
-package com.example.smartgarden;
+package com.example.smartgarden.ui.trees;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import com.example.smartgarden.databinding.FragmentTreesBinding;
 
-import com.example.smartgarden.R;
+public class TreesFragment extends Fragment {
 
-
-public class HomeFragment extends Fragment {
-
-
-
+    private FragmentTreesBinding binding;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        binding = FragmentTreesBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
 
 
         return view;
-
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }

@@ -9,7 +9,7 @@
     <item
         android:id="@+id/navigation_machinery"
         android:icon="@drawable/ic_tractor"
-        android:title="@string/title_machinery" />
+        android:title="@string/title_machinery"/>
 
     <item
         android:id="@+id/navigation_trees"
