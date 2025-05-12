@@ -4,28 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
+
     <fragment
-    android:id="@+id/navigation_home"
-    android:name="com.example.smartgarden.ui.home.HomeFragment"
-    android:label="@string/title_home"
-    tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_home"
+        android:name="com.example.smartgarden.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_machinery"
         android:name="com.example.smartgarden.ui.machinery.MachineryFragment"
         android:label="@string/title_machinery"
-        tools:layout="@layout/fragment_machinery" />
+        tools:layout="@layout/fragment_machinery" >
+        <action
+            android:id="@+id/action_machinery_to_add_edit"
+            app:destination="@id/navigation_add_edit_machinery" />
+        <action
+            android:id="@+id/action_machinery_to_log_usage"
+            app:destination="@id/navigation_log_machinery_usage" />
+        <action
+            android:id="@+id/action_machinery_to_history"
+            app:destination="@id/navigation_machinery_history"/>
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_trees"
         android:name="com.example.smartgarden.ui.trees.TreesFragment"
         android:label="@string/title_trees"
-        tools:layout="@layout/fragment_trees" />
+        tools:layout="@layout/fragment_trees" >
+        <action
+            android:id="@+id/action_trees_to_add_edit"
+            app:destination="@id/navigation_add_edit_plant" />
+        <action
+            android:id="@+id/action_trees_to_log_harvest"
+            app:destination="@id/navigation_log_harvest" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_reporting"
         android:name="com.example.smartgarden.ui.reporting.ReportingFragment"
         android:label="@string/reporting_fragment_label"
         tools:layout="@layout/fragment_reporting" />
+
+    <fragment
+        android:id="@+id/navigation_add_edit_machinery"
+        android:name="com.example.smartgarden.ui.machinery.AddEditMachineryFragment"
+        android:label="Керування Технікою"
+        tools:layout="@layout/fragment_add_edit_machinery" >
+        <argument android:name="machineryId" app:argType="string" app:nullable="true" android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_add_edit_plant"
+        android:name="com.example.smartgarden.ui.trees.AddEditPlantFragment"
+        android:label="Керування Рослинами"
+        tools:layout="@layout/fragment_add_edit_plant" >
+        <argument android:name="plantId" app:argType="string" app:nullable="true" android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_log_harvest"
+        android:name="com.example.smartgarden.ui.harvest.LogHarvestFragment"
+        android:label="Запис Врожаю"
+        tools:layout="@layout/fragment_log_harvest" >
+        <argument android:name="plantId" app:argType="string" />
+        <argument android:name="plantInfo" app:argType="string" app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_log_machinery_usage"
+        android:name="com.example.smartgarden.ui.machinery.LogMachineryUsageFragment"
+        android:label="Запис Використання Техніки"
+        tools:layout="@layout/fragment_log_machinery_usage" >
+        <argument android:name="machineryId" app:argType="string"/>
+        <argument android:name="machineryName" app:argType="string" app:nullable="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_machinery_history"
+        android:name="com.example.smartgarden.ui.machinery.MachineryHistoryFragment"
+        android:label="Історія Використання"
+        tools:layout="@layout/fragment_machinery_history" >
+        <argument android:name="machineryId" app:argType="string"/>
+        <argument android:name="machineryName" app:argType="string" app:nullable="true"/>
+    </fragment>
 
 </navigation>

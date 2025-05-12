@@ -19,25 +19,27 @@
         <ImageView
             android:id="@+id/image_view_machinery"
             android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_height="0dp"
             android:scaleType="centerCrop"
             android:contentDescription="@null"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" /> <TextView
-        android:id="@+id/text_view_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAppearance="?attr/textAppearanceListItem"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/button_edit"
-        app:layout_constraintStart_toEndOf="@+id/image_view_machinery"
-        app:layout_constraintTop_toTopOf="@+id/image_view_machinery"
-        tools:text="Трактор John Deere 8R" />
+            tools:srcCompat="@drawable/ic_tractor" />
+
+        <TextView
+            android:id="@+id/text_view_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/button_edit"
+            app:layout_constraintStart_toEndOf="@+id/image_view_machinery"
+            app:layout_constraintTop_toTopOf="@+id/image_view_machinery"
+            tools:text="Трактор John Deere 8R" />
 
         <TextView
             android:id="@+id/text_view_status"
@@ -61,24 +63,9 @@
             app:layout_constraintEnd_toEndOf="@+id/text_view_status"
             app:layout_constraintStart_toStartOf="@+id/text_view_status"
             app:layout_constraintTop_toBottomOf="@+id/text_view_status"
+            app:layout_constraintBottom_toTopOf="@+id/button_log_usage"
+            app:layout_constraintVertical_bias="0.0"
             tools:text="Технічний стан: Справний" />
-
-        <TextView
-            android:id="@+id/button_history"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Історія використання"
-            android:textColor="?attr/colorPrimary"
-            android:textSize="14sp"
-            android:clickable="true"
-            android:focusable="true"
-            android:background="?attr/selectableItemBackground"
-            app:layout_constraintStart_toStartOf="@+id/text_view_condition"
-            app:layout_constraintTop_toBottomOf="@+id/text_view_condition"
-            app:layout_constraintBottom_toBottomOf="@+id/image_view_machinery"
-            app:layout_constraintVertical_bias="1.0"/>
-
 
         <ImageButton
             android:id="@+id/button_edit"
@@ -87,13 +74,13 @@
             android:layout_marginEnd="4dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Редагувати"
-            app:srcCompat="@drawable/ic_edit"   android:tint="?android:attr/textColorSecondary"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_edit"
             app:layout_constraintBottom_toTopOf="@+id/button_delete"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed"
-            tools:ignore="TouchTargetSizeCheck,UseAppTint" />
-
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <ImageButton
             android:id="@+id/button_delete"
@@ -102,12 +89,44 @@
             android:layout_marginEnd="4dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Видалити"
-            app:srcCompat="@drawable/ic_delete" android:tint="?android:attr/textColorSecondary"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_delete"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_edit"
-            tools:ignore="TouchTargetSizeCheck,UseAppTint"/>
+            app:layout_constraintTop_toBottomOf="@+id/button_edit" />
 
+        <ImageButton
+            android:id="@+id/button_log_usage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Записати використання"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@android:drawable/ic_menu_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/text_view_condition"
+            app:layout_constraintEnd_toStartOf="@+id/button_show_history"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:tint="?attr/colorPrimary" />
+
+        <ImageButton
+            android:id="@+id/button_show_history"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Переглянути історію використання"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@android:drawable/ic_menu_recent_history"
+            app:layout_constraintBottom_toBottomOf="@+id/button_log_usage"
+            app:layout_constraintStart_toEndOf="@+id/button_log_usage"
+            app:layout_constraintTop_toTopOf="@+id/button_log_usage"
+            app:tint="?attr/colorPrimary" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

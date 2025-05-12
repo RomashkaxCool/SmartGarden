@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".ui.trees.AddEditPlantFragment">
+
+        <TextView
+            android:id="@+id/text_view_add_edit_plant_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Додати Рослину"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_view_add_edit_machinery"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_tree"
+            android:background="?attr/colorSurfaceVariant"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_add_edit_plant_title"
+            android:contentDescription="Зображення рослини" />
+
+        <Button
+            android:id="@+id/button_select_image"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Обрати фото"
+            app:layout_constraintStart_toEndOf="@+id/image_view_add_edit_machinery"
+            app:layout_constraintTop_toTopOf="@+id/image_view_add_edit_machinery"
+            app:layout_constraintBottom_toBottomOf="@+id/image_view_add_edit_machinery"
+            android:layout_marginStart="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/radio_group_plant_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_add_edit_machinery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <RadioButton android:id="@+id/radio_button_tree" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Дерево" android:checked="true"/>
+            <RadioButton android:id="@+id/radio_button_berry" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Ягода"/>
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_culture"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:hint="Культура (напр., Яблуня)"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radio_group_plant_type">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_culture" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="textCapSentences" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_variety"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:hint="Сорт (напр., Голден)"
+            app:layout_constraintTop_toBottomOf="@id/text_input_layout_culture"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_variety" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="textCapSentences" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_age"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:hint="Вік (років)"
+            app:layout_constraintTop_toBottomOf="@id/text_input_layout_variety"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_age" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_quantity"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:hint="Кількість (шт.)"
+            app:layout_constraintTop_toBottomOf="@id/text_input_layout_age"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_quantity" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="number" android:text="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_row"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:hint="Ряд / Місце"
+            app:layout_constraintTop_toBottomOf="@id/text_input_layout_quantity"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_row" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_status"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:hint="Стан (напр., Обрізано)"
+            app:layout_constraintTop_toBottomOf="@id/text_input_layout_row"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_status" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="textCapSentences" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/button_save_plant"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Зберегти Рослину"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_input_layout_status" /> </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
